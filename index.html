@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Vrishab Square</title>
+    </head>
+    <body>
+        <center>
+            <h1>Square Finder</h1>
+            <br/><br/>
+            <form onsubmit="find()">
+                <input id="num" step="any" type="number" placeholder="Enter A Number" />
+                <br/><br/>
+                <input type="submit">
+            </form>
+
+            <p id="msg"></p>
+
+        </center>
+
+        <script>
+            function find()
+            {
+                event.preventDefault();
+                let num=document.getElementById("num");
+            let msg=document.getElementById("msg");
+
+            if(num.value === "")
+            {
+                alert("Enter a number");
+                msg.innerHTML="";
+                num.focus();
+                return;
+            }
+            let n=parseFloat(num.value);
+            
+
+            let sq=n*n;
+            let rep="Square of the Number is: "+sq.toFixed(2);
+            msg.innerHTML=rep;
+            }
+            
+
+        </script>
+        
+    </body>
+</html>
